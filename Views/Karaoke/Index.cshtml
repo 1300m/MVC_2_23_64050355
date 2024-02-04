@@ -1,0 +1,33 @@
+﻿@model Karaoke
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Karaoke</h1>
+<form method="POST" asp-controller="Karaoke" asp-action="Index">
+    <div class="form-group">
+        <label asp-for="SongName"></label>
+        <input type="text" asp-for="SongName" class="form-control" />
+        <span asp-validation-for="SongName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SongDuration"></label>
+        <input type="number" asp-for="SongDuration" class="form-control" />
+        <span asp-validation-for="SongDuration" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Singer1"></label>
+        <input type="text" asp-for="Singer1" class="form-control" />
+        <span asp-validation-for="Singer1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Singer2"></label>
+        <input type="text" asp-for="Singer2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Singer3"></label>
+        <input type="text" asp-for="Singer3" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Karaoke>;
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1 class="text-center">Score</h1>
+@foreach (var karaoke in Model)
+{
+<p>Song name: @karaoke.SongName</p>
+    <p>Duration: @karaoke.SongDuration sec.</p>
+    <p>Singer: @karaoke.Singer1</p>
+    @if (!@karaoke.Singer2.Equals(""))
+    {
+        <p>Singer: @karaoke.Singer2</p>
+    }
+    @if (!@karaoke.Singer3.Equals(""))
+    {
+        <p>Singer: @karaoke.Singer3</p>
+    }
+    <p>Score: @karaoke.Score</p>
+    <hr/>
+}
+
+<a class="btn btn-warning"
+asp-controller="Karaoke"
+asp-action="Index">
+    back
+</a>
